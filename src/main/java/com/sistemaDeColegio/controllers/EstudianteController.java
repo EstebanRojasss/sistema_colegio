@@ -3,30 +3,27 @@ package com.sistemaDeColegio.controllers;
 import com.sistemaDeColegio.entities.personas.Estado;
 import com.sistemaDeColegio.entities.personas.Estudiante;
 import com.sistemaDeColegio.repository.EstudianteRepository;
+import com.sistemaDeColegio.service.EstudianteService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
 
-@Controller
+@RestController
 public class EstudianteController {
 
 
-    private final EstudianteRepository repository;
+    private final EstudianteService service;
 
-    public EstudianteController(EstudianteRepository repository){
-        this.repository = repository;
+    public EstudianteController(EstudianteService estudianteService){
+        this.service = estudianteService;
     }
 
-    public void crearEstudiante(){
-        Estudiante estudiante = new Estudiante("Esteban",
-                "Alberto",
-                6944521,
-                LocalDate.of(2002, 5, 10),
-                "Centro",
-                "098341231",
-                "Hola@gmail.com",
-                Estado.ACTIVO,LocalDate.now());
-
-        repository.save(estudiante);
+    @PostMapping("/estudiantes")
+    public ResponseEntity<Void> crearEstudiante(){
+        service.crearEstudiante();
+        return ResponseEntity.ok().build();
     }
 }

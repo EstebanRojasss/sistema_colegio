@@ -1,20 +1,24 @@
 package com.sistemaDeColegio.controllers;
+import com.sistemaDeColegio.service.EmpleadoService;
 
-import com.sistemaDeColegio.entities.personas.Empleado;
-import com.sistemaDeColegio.entities.personas.Estado;
-import com.sistemaDeColegio.repository.EmpleadoRepository;
-import org.springframework.stereotype.Controller;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.time.LocalDate;
 
-@Controller
+@RestController
 public class EmpleadoController {
 
-    private final EmpleadoRepository repository;
+    private final EmpleadoService service;
 
-    public EmpleadoController(EmpleadoRepository repository){
-        this.repository = repository;
+    public EmpleadoController(EmpleadoService service){
+        this.service = service;
     }
 
+    @PostMapping("/empleados")
+    public ResponseEntity<Void>agregarEmpleado(){
+        service.crearEmpleado();
+        return ResponseEntity.ok().build();
+    }
 
 }

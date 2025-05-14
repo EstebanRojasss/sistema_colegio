@@ -2,10 +2,18 @@ package com.sistemaDeColegio.service;
 
 import com.sistemaDeColegio.entities.personas.Empleado;
 import com.sistemaDeColegio.entities.personas.Estado;
+import com.sistemaDeColegio.repository.EmpleadoRepository;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-
+@Service
 public class EmpleadoService {
+    private final EmpleadoRepository repository;
+
+    public EmpleadoService(EmpleadoRepository repository){
+        this.repository = repository;
+    }
+
     public void crearEmpleado(){
         Empleado empleado = new Empleado("Esteban",
                 "Rojas",

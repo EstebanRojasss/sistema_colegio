@@ -13,7 +13,7 @@ public class DocenteController {
     public DocenteController(DocenteService docenteService){
         this.service = docenteService;
     }
-    @PostMapping("/docente")
+    @PostMapping("/docentes")
     public ResponseEntity<Void> mostrarDatosDocente(){
         service.crearDocente();
         return ResponseEntity.ok().build();
