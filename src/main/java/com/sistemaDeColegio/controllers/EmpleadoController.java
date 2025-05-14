@@ -16,15 +16,5 @@ public class EmpleadoController {
         this.repository = repository;
     }
 
-    public void crearEmpleado(){
-        Empleado empleado = new Empleado("Esteban",
-                "Rojas",
-                23423423,
-                LocalDate.of(2004, 10,10),
-                "Requejo",
-                "0984555444",
-                "esteban@proton.com",
-                Estado.SUSPENDIDO);
-        repository.save(empleado);
-    }
+
 }
