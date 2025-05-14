@@ -13,9 +13,9 @@ public class DocenteController {
     public DocenteController(DocenteService docenteService){
         this.service = docenteService;
     }
-    @PostMapping
+    @PostMapping("/docente")
     public void mostrarDatosDocente(){
-
+        service.crearDocente();
     }
 
 }
