@@ -1,7 +1,7 @@
 package com.sistemaDeColegio.service;
 
 import com.sistemaDeColegio.entities.personas.Empleado;
-import com.sistemaDeColegio.entities.personas.Estado;
+import com.sistemaDeColegio.entities.personas.estado.Estado_Persona;
 import com.sistemaDeColegio.repository.EmpleadoRepository;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +22,7 @@ public class EmpleadoService {
                 "Requejo",
                 "0984555444",
                 "esteban@proton.com",
-                Estado.SUSPENDIDO);
+                Estado_Persona.SUSPENDIDO);
         repository.save(empleado);
     }
 }

@@ -1,4 +1,4 @@
-package com.sistemaDeColegio.entities;
+package com.sistemaDeColegio.entities.permisos;
 
 public enum TipoPermiso {
     CREAR_USUARIO,
@@ -9,6 +9,7 @@ public enum TipoPermiso {
     AGREGAR_TAREA,
     ELIMINAR_TAREA,
     CARGAR_ASISTENCIA,
-    SUBIR_TAREA
+    SUBIR_TAREA,
+    ASIGNAR_ROL
 
 }
