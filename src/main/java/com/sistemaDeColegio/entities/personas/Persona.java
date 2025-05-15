@@ -1,5 +1,6 @@
 package com.sistemaDeColegio.entities.personas;
 
+import com.sistemaDeColegio.entities.personas.estado.Estado_Persona;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -17,12 +18,12 @@ public abstract class Persona {
     protected String email;
 
     @Enumerated(EnumType.STRING)
-    protected Estado estado;
+    protected Estado_Persona estadoPersona;
 
     public Persona() {
     }
 
-    public Persona(String nombre, String apellido, Integer numero_documento, LocalDate fecha_nacimiento, String direccion, String telefono, String email, Estado estado) {
+    public Persona(String nombre, String apellido, Integer numero_documento, LocalDate fecha_nacimiento, String direccion, String telefono, String email, Estado_Persona estadoPersona) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.numero_documento = numero_documento;
@@ -30,7 +31,7 @@ public abstract class Persona {
         this.direccion = direccion;
         this.telefono = telefono;
         this.email = email;
-        this.estado = estado;
+        this.estadoPersona = estadoPersona;
     }
 
     public void setNombre(String nombre) {
@@ -61,8 +62,8 @@ public abstract class Persona {
         this.email = email;
     }
 
-    public void setEstado(Estado estado) {
-        this.estado = estado;
+    public void setEstado(Estado_Persona estadoPersona) {
+        this.estadoPersona = estadoPersona;
     }
 
     public Integer getId() {
@@ -97,7 +98,7 @@ public abstract class Persona {
         return email;
     }
 
-    public Estado getEstado() {
-        return estado;
+    public Estado_Persona getEstado() {
+        return estadoPersona;
     }
 }

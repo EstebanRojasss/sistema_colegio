@@ -1,11 +1,9 @@
 package com.sistemaDeColegio.service;
 
-import com.sistemaDeColegio.entities.personas.Estado;
+import com.sistemaDeColegio.entities.personas.estado.Estado_Persona;
 import com.sistemaDeColegio.entities.personas.Estudiante;
 import com.sistemaDeColegio.repository.EstudianteRepository;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import java.time.LocalDate;
 
@@ -26,7 +24,7 @@ public class EstudianteService {
                 "Centro",
                 "094112112",
                 "esteban@proton.com",
-                Estado.SUSPENDIDO,
+                Estado_Persona.SUSPENDIDO,
                 LocalDate.now());
         repository.save(estudiante);
     }

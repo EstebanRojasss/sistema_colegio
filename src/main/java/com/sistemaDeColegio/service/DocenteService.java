@@ -1,7 +1,7 @@
 package com.sistemaDeColegio.service;
 
 import com.sistemaDeColegio.entities.personas.Docente;
-import com.sistemaDeColegio.entities.personas.Estado;
+import com.sistemaDeColegio.entities.personas.estado.Estado_Persona;
 import com.sistemaDeColegio.repository.DocenteRepository;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +24,7 @@ public class DocenteService {
                 "Moncholo´s bar",
                 "0981111111",
                 "moncholoempanadero@gmail.com",
-                Estado.SUSPENDIDO);
+                Estado_Persona.SUSPENDIDO);
         repository.save(docente);
     }
 
