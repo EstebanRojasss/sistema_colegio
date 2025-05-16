@@ -1,7 +1,10 @@
 package com.sistemaDeColegio.controllers;
 
+import com.sistemaDeColegio.dto.UsuarioDto;
 import com.sistemaDeColegio.service.UsuarioService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,8 +18,9 @@ public class UsuarioController {
         this.service = usuarioService;
     }
 
-    @PostMapping("/usuario/{}")
-    public String nuevoUsuario(){
-        service.crearUsuario();
+    @PostMapping()
+    public ResponseEntity<Void> nuevoUsuario(@RequestBody UsuarioDto dto){
+        service.crearUsuario(dto);
+        return ResponseEntity.ok().build();
     }
 }

@@ -4,6 +4,6 @@ public enum EstadoUsuario {
 
     CONECTADO,
     DESCONECTADO,
-    DE_BAJA
+    DE_BAJA,
 
 }
