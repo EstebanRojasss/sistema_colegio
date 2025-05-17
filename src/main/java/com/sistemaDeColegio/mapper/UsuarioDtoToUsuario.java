@@ -5,6 +5,8 @@ import com.sistemaDeColegio.entities.usuario.Usuario;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+
 @Component
 public class UsuarioDtoToUsuario implements IMapper<UsuarioDto, Usuario>{
 
@@ -15,7 +17,7 @@ public class UsuarioDtoToUsuario implements IMapper<UsuarioDto, Usuario>{
                 in.contrasenia(),
                 in.email(),
                 LocalDate.now(),
-                in.roles()
+                new HashSet<>()
                 );
     }
 }
