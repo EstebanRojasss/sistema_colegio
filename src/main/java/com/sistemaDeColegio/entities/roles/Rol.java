@@ -3,6 +3,7 @@ package com.sistemaDeColegio.entities.roles;
 import com.sistemaDeColegio.entities.permisos.Permiso;
 import jakarta.persistence.*;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity

@@ -3,8 +3,10 @@ package com.sistemaDeColegio.entities.usuario;
 import com.sistemaDeColegio.entities.personas.estado.Estado_Persona;
 import com.sistemaDeColegio.entities.roles.Rol;
 import jakarta.persistence.*;
+import lombok.Getter;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -14,7 +16,7 @@ public class Usuario {
     private Integer id;
     private String nombre_usuario;
     private String contrasenia;
-    @Column(name = "name", unique = true)
+    @Column(name = "email", unique = true)
     private String email;
     private LocalDate fecha_registro;
     private Estado_Persona estadoPersona;
